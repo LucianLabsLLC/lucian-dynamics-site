@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Lucian Labs LLC</title>
+<meta name="description" content="Lucian Labs LLC's privacy policy for its website and its apps: what PayGrade keeps on your device, what it downloads, what each optional permission is for, and what leaves your phone: nothing, unless you send it.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0f1f" media="(prefers-color-scheme: dark)">
+<link rel="stylesheet" href="../site.css">
+<link rel="icon" href="favicon-64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="./">Lucian Labs <small>LLC</small></a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="paygrade.html">PayGrade</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap prose">
+  <h1>Privacy Policy</h1>
+  <p class="dateline">Lucian Labs LLC. Last updated 17 November 2026.</p>
+
+  <p>This policy covers Lucian Labs LLC's website, luciandynamics.co, which lucianlabs.co also leads to, and its apps. Lucian Labs makes one app today, <a href="paygrade.html">PayGrade: GS Pay Calculator</a>, and the sections about "the app" below describe it. The short version: our software collects nothing about you. There is no account, no sign-in, no analytics, no advertising and no third-party code. What you enter stays on your device, and the only thing that ever leaves it is a diagnostics log you choose to send us yourself. This page explains that in plain words, section by section.</p>
+
+  <ol class="toc">
+    <li><a href="#on-device">What the app keeps on your device</a></li>
+    <li><a href="#downloads">What the app downloads</a></li>
+    <li><a href="#diagnostics">The diagnostics log</a></li>
+    <li><a href="#permissions">Optional permissions: location, calendar, notifications</a></li>
+    <li><a href="#statement">Reading a pay statement</a></li>
+    <li><a href="#purchases">Purchases and subscriptions</a></li>
+    <li><a href="#email">When you email us</a></li>
+    <li><a href="#children">Children</a></li>
+    <li><a href="#choices">Your choices</a></li>
+    <li><a href="#website">Our website</a></li>
+    <li><a href="#changes">Changes to this policy</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+
+  <h2 id="on-device">1. What the app keeps on your device</h2>
+  <p>Everything you enter is stored in the app's own storage on your iPhone or iPad and nowhere else: your series, grade, step and locality; your schedule, pay date and leave balances; the figures you type into the tools; and your settings. The app also keeps a copy of any pay tables it has downloaded (see the next section) and the diagnostics log described below.</p>
+  <p>We never see any of it. Deleting the app deletes all of it. If you back up your device to iCloud or a computer, the backup can include the app's data like any other app's; the downloaded pay tables are marked to be left out of backups because the app can fetch them again.</p>
+
+  <h2 id="downloads">2. What the app downloads</h2>
+  <p>The app makes one kind of network request of its own. At most once a day it fetches three small public files from a page we publish on GitHub Pages: the year's OPM pay tables, the year's tax and benefit figures, and OPM's FEHB premium table. Each file is signed by us, and the app keeps a copy only if the signature checks against the key built into the app and the file is newer than what it has.</p>
+  <p>The request is a plain download of public files. It carries no account, no identifier and nothing you entered, and the app sends nothing to us or to anyone else. Like any web host, GitHub sees the network address the request came from and may log it; GitHub's own <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a> covers that. If the download fails, the app uses the data built into it. Settings, then About, shows which data is in use.</p>
+
+  <h2 id="diagnostics">3. The diagnostics log</h2>
+  <p>To make bugs findable, the app keeps a small log on your device of what it did: which controls were tapped, by their names; which screens opened and for how long; how many characters were typed into a field and the gaps between keystrokes, never the text itself; main-thread stalls, memory warnings, and the crash and hang reports iOS hands the app. It holds at most seven days or a few thousand events, whichever is smaller.</p>
+  <p>The log leaves your device only by your hand. Settings, then Diagnostics, then Share opens the system share sheet with the log attached, and you choose where it goes. In versions of the app where Report a Bug attaches the log to the email draft, you can delete the attachment before sending. Nothing is uploaded on its own; there is no server to upload to. You can switch the log off or clear it under Settings, then Diagnostics.</p>
+
+  <h2 id="permissions">4. Optional permissions</h2>
+  <p>None of these is asked for when the app starts, and the app works fully if you decline them all.</p>
+  <h3>Location</h3>
+  <p>Asked for only when you tap Enable under Settings, then Location, or the location button in the Take-Home Estimator. The app uses your position once to find your state, and where one levies an income tax your county or city, so the estimate can apply the right rates. Apple's Maps service does that lookup, under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>. The app keeps the state, county or city it found as part of the estimate; it does not store your location and never tracks you.</p>
+  <h3>Calendar</h3>
+  <p>Export to Apple Calendar, a Premium feature, asks for calendar access when you use it. The app creates a calendar named "PayGrade" and adds your work days, pay days, holidays and leave to it. It only adds, changes or removes events it created itself; it never reads or changes your own events. Everything happens between the app and the Calendar app on your device.</p>
+  <h3>Notifications</h3>
+  <p>Step-increase reminders are local notifications, scheduled on your device by the app itself when you enable them under Settings. There is no push server.</p>
+
+  <h2 id="statement">5. Reading a pay statement</h2>
+  <p>The Take-Home Estimator can read an Earnings and Leave Statement PDF that you choose through the system document picker. The file is read in memory, on your device, once. The app shows you what it read, keeps the ten dollar amounts in its own storage if you accept them, does not store the document, and deletes any copy the picker made. The statement is never sent anywhere.</p>
+
+  <h2 id="purchases">6. Purchases and subscriptions</h2>
+  <p>PayGrade Premium is sold through Apple's App Store. Apple handles the payment and the subscription under <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a>; we never see your payment details or your Apple Account. The app asks Apple whether a subscription is active in order to unlock Premium, and that is all it learns.</p>
+
+  <h2 id="email">7. When you email us</h2>
+  <p>If you write to us, we receive your email address, whatever you put in the message, and any diagnostics log you attach. We use them only to answer you and to fix what you reported, and we don't share them with anyone. Ask and we will delete the correspondence.</p>
+
+  <h2 id="children">8. Children</h2>
+  <p>PayGrade is a tool for federal employees and is not directed at children. It collects no information from anyone, children included.</p>
+
+  <h2 id="choices">9. Your choices</h2>
+  <ul>
+    <li>Everything the app holds is on your device: delete the app to delete all of it.</li>
+    <li>Switch the diagnostics log off or clear it under Settings, then Diagnostics.</li>
+    <li>Withdraw location, calendar or notification permission at any time in the iOS Settings app.</li>
+    <li>Nothing we hold about you exists unless you emailed us; see the section above.</li>
+  </ul>
+
+  <h2 id="website">10. Our website</h2>
+  <p>Our website is a set of static pages. It sets no cookies, runs no analytics and loads nothing from other servers. It is hosted on GitHub Pages, which may log visits as described in GitHub's <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacy statement</a>.</p>
+
+  <h2 id="changes">11. Changes to this policy</h2>
+  <p>If the app starts doing something this page doesn't describe, we will change this page first and update the date at the top.</p>
+
+  <h2 id="contact">12. Contact</h2>
+  <p>Lucian Labs LLC, California, United States. Email <a href="mailto:paygradesupport@icloud.com?subject=Privacy%20Question">paygradesupport@icloud.com</a>.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© 2026 Lucian Labs LLC</p>
+    <nav aria-label="Footer">
+      <a href="../">Lucian Dynamics</a>
+      <a href="paygrade.html">PayGrade</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://sites.google.com/view/paygrade-terms">Terms of Use</a>
+    </nav>
+    <p class="legal">Apple, the Apple logo, iPhone, iPad and App Store are trademarks of Apple Inc.</p>
+  </div>
+</footer>
+</body>
+</html>
