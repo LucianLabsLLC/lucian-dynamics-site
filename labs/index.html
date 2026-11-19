@@ -6,8 +6,7 @@
 <title>Lucian Labs LLC</title>
 <meta name="description" content="Lucian Labs LLC is a small independent software company in California. It builds software that takes its figures from the source, says things in plain words, and keeps your data on your device. Its first app is PayGrade, the GS pay calculator for U.S. federal employees.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a0f1f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#070d22">
 <link rel="stylesheet" href="../site.css">
 <link rel="icon" href="favicon-64.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -17,8 +16,12 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="wordmark" href="./" aria-current="page">Lucian Labs <small>LLC</small></a>
+    <a class="wordmark" href="./" aria-current="page">
+      <img class="mark" src="paygrade-icon-512.png" width="34" height="34" alt="">
+      Lucian Labs <small>LLC</small>
+    </a>
     <nav class="site-nav" aria-label="Site">
+      <a class="up" href="../">Lucian Dynamics</a>
       <a href="paygrade.html">PayGrade</a>
       <a href="support.html">Support</a>
       <a href="privacy.html">Privacy</a>
@@ -28,8 +31,8 @@
 
 <main id="main">
 
-  <section class="hero">
-    <div class="wrap">
+  <section class="band hero">
+    <div class="wrap split">
       <div>
         <span class="eyebrow">Independent software, made in California</span>
         <h1>Lucian Labs builds software that does one job carefully.</h1>
@@ -39,23 +42,31 @@
           <a class="button secondary" href="#contact">Contact</a>
         </div>
       </div>
+      <div class="visual">
+        <div class="phone"><img src="shots/calculator.webp" width="720" height="1564" alt="PayGrade's Calculator on an iPhone: a Management and Program Analyst position, GS-12 step 5, in the Washington-Baltimore-Arlington locality, with an estimated annual pay of $116,071 and $55.62 an hour."></div>
+      </div>
     </div>
   </section>
 
   <section class="section alt" id="how">
     <div class="wrap">
-      <h2>How we work</h2>
-      <p class="intro">Three rules, and every product has to keep all of them.</p>
+      <div class="section-head">
+        <h2>How we work</h2>
+        <p>Three rules, and every product has to keep all of them.</p>
+      </div>
       <div class="grid three">
         <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 15 2 2 4-4"/></svg></div>
           <h3>From the source</h3>
           <p>Every figure is taken from the page its publisher puts it on, checked against that page, and updates itself when the publisher's figure changes. In PayGrade that means OPM's pay tables, the IRS's brackets, the TSP's limits and the SSA's figures.</p>
         </article>
         <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div>
           <h3>Plain words</h3>
           <p>A screen says what a number is and where it came from. Our descriptions say what the software does today, not what we hope it will do next year.</p>
         </article>
         <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
           <h3>Yours stays yours</h3>
           <p>No accounts, no analytics, no advertising and no third-party code. Nothing you enter leaves your device, and nothing reaches us unless you send it yourself.</p>
         </article>
@@ -65,10 +76,13 @@
 
   <section class="section" id="products">
     <div class="wrap">
-      <h2>What we make</h2>
+      <div class="section-head">
+        <h2>What we make</h2>
+      </div>
       <article class="product">
-        <img src="paygrade-icon-512.png" width="96" height="96" alt="The PayGrade app icon: a columned building with a dollar sign inside a blue arc.">
+        <img src="paygrade-icon-512.png" width="128" height="128" alt="The PayGrade app icon: a columned building with a dollar sign inside a blue arc.">
         <div>
+          <span class="tag">iPhone and iPad</span>
           <h3>PayGrade: GS Pay Calculator</h3>
           <p>The pay calculator for U.S. federal employees on the General Schedule. Enter your series, grade, step and locality to see your base pay, locality adjustment and gross pay, estimate what you take home, keep your work schedule and plan your career, all from OPM's own tables, which the app keeps current by itself. For iPhone and iPad. The Calculator is free; Premium is a subscription through the App Store.</p>
           <div class="actions">
@@ -77,14 +91,35 @@
           </div>
         </div>
       </article>
+      <div class="gallery">
+        <figure class="shot">
+          <div class="phone"><img src="shots/calculator.webp" width="720" height="1564" loading="lazy" alt="The Calculator screen: series, location, grade and step, and the estimated annual pay."></div>
+          <figcaption><b>Calculator</b> Series, grade, step and locality, from OPM's own tables.</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone"><img src="shots/takehome.webp" width="720" height="1564" loading="lazy" alt="The Take-Home Estimator: gross salary, additional earnings, tax settings, deductions and the breakdown of federal tax, state tax, FERS, FICA, TSP and FEHB."></div>
+          <figcaption><b>Take-Home Estimator</b> Federal and state tax, FERS, TSP and FEHB, line by line.</figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone"><img src="shots/schedule.webp" width="720" height="1564" loading="lazy" alt="The Schedule calendar for November 2026 with pay days, holidays and rest days marked, and the legend below it."></div>
+          <figcaption><b>Schedule</b> Pay days, holidays, rest days and leave on one calendar.</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
   <section class="section alt" id="contact">
     <div class="wrap">
-      <h2>About Lucian Labs</h2>
-      <p class="intro">Lucian Labs LLC is an independent software company registered in California, United States. It is a small company, so the person who answers your email is the person who wrote the software.</p>
+      <div class="section-head">
+        <h2>About Lucian Labs</h2>
+        <p>Lucian Labs LLC is an independent software company registered in California, United States. It is a small company, so the person who answers your email is the person who wrote the software.</p>
+      </div>
       <p>Email <a href="mailto:paygradesupport@icloud.com">paygradesupport@icloud.com</a> for anything about our products or the company. The <a href="support.html">support page</a> answers the common questions, and the <a href="privacy.html">privacy policy</a> says exactly what our software keeps, fetches and sends, which is nothing about you.</p>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>California, United States</dd></div>
+        <div><dt>Part of</dt><dd><a href="../">Lucian Dynamics</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:paygradesupport@icloud.com">paygradesupport@icloud.com</a></dd></div>
+      </dl>
     </div>
   </section>
 
@@ -92,14 +127,33 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>© 2026 Lucian Labs LLC</p>
-    <nav aria-label="Footer">
-      <a href="../">Lucian Dynamics</a>
-      <a href="paygrade.html">PayGrade</a>
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="https://sites.google.com/view/paygrade-terms">Terms of Use</a>
-    </nav>
+    <div class="cols">
+      <div>
+        <a class="wordmark" href="./">
+          <img class="mark" src="paygrade-icon-512.png" width="34" height="34" alt="">
+          Lucian Labs <small>LLC</small>
+        </a>
+        <p>Software that does one job carefully, for people whose numbers have to be right.</p>
+        <p>© 2026 Lucian Labs LLC</p>
+      </div>
+      <div>
+        <h4>Lucian Labs</h4>
+        <nav aria-label="Lucian Labs">
+          <a href="paygrade.html">PayGrade</a>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="https://sites.google.com/view/paygrade-terms">Terms of Use</a>
+        </nav>
+      </div>
+      <div>
+        <h4>Lucian Dynamics</h4>
+        <nav aria-label="Lucian Dynamics">
+          <a href="../">Lucian Dynamics</a>
+          <a href="../#how">How we work</a>
+          <a href="../#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
     <p class="legal">Apple, the Apple logo, iPhone, iPad and App Store are trademarks of Apple Inc.</p>
   </div>
 </footer>

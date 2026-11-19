@@ -6,17 +6,20 @@
 <title>Lucian Dynamics</title>
 <meta name="description" content="Lucian Dynamics is the name over everything Lucian Labs LLC makes: a small independent company in California that builds one thing at a time, takes its figures from the source, says things in plain words, and keeps your data on your device. Its software line is Lucian Labs, the maker of PayGrade.">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a0f1f" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#070d22">
 <link rel="stylesheet" href="site.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1f5c'/%3E%3Ctext x='32' y='42' font-family='-apple-system,Helvetica,Arial,sans-serif' font-size='27' font-weight='700' fill='%23ffffff' text-anchor='middle'%3ELD%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="labs/favicon-64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="labs/apple-touch-icon.png">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="site-header">
   <div class="wrap">
-    <a class="wordmark" href="./" aria-current="page">Lucian Dynamics</a>
+    <a class="wordmark" href="./" aria-current="page">
+      <img class="mark" src="labs/paygrade-icon-512.png" width="34" height="34" alt="">
+      Lucian Dynamics
+    </a>
     <nav class="site-nav" aria-label="Site">
       <a href="#how">How we work</a>
       <a href="#work">Our work</a>
@@ -28,8 +31,8 @@
 
 <main id="main">
 
-  <section class="hero">
-    <div class="wrap">
+  <section class="band hero">
+    <div class="wrap split">
       <div>
         <span class="eyebrow">An independent company in California</span>
         <h1>One name over everything we make.</h1>
@@ -39,23 +42,39 @@
           <a class="button secondary" href="#contact">Contact</a>
         </div>
       </div>
+      <div class="visual">
+        <svg class="orbit" viewBox="0 0 320 320" aria-hidden="true">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2566e8"/><stop offset="1" stop-color="#17b9cc"/></linearGradient><clipPath id="r"><rect x="122" y="122" width="76" height="76" rx="18"/></clipPath></defs>
+          <g fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1">
+            <circle cx="160" cy="160" r="146"/><circle cx="160" cy="160" r="110"/><circle cx="160" cy="160" r="74"/>
+          </g>
+          <g class="spin"><path d="M160 14a146 146 0 0 1 146 146" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/><circle cx="306" cy="160" r="6" fill="#17b9cc"/></g>
+          <g class="spin-2"><path d="M50 160a110 110 0 0 1 110-110" fill="none" stroke="rgba(127,176,255,.85)" stroke-width="2" stroke-linecap="round"/><circle cx="50" cy="160" r="4" fill="#7fb0ff"/></g>
+          <image href="labs/paygrade-icon-512.png" x="122" y="122" width="76" height="76" clip-path="url(#r)"/>
+        </svg>
+      </div>
     </div>
   </section>
 
   <section class="section alt" id="how">
     <div class="wrap">
-      <h2>How we work</h2>
-      <p class="intro">Three rules. Everything that carries the name has to keep all of them.</p>
+      <div class="section-head">
+        <h2>How we work</h2>
+        <p>Three rules. Everything that carries the name has to keep all of them.</p>
+      </div>
       <div class="grid three">
         <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="m9 15 2 2 4-4"/></svg></div>
           <h3>From the source</h3>
           <p>Every figure, rule or specification comes from the body that publishes it, is checked against that page, and is updated when the publisher's figure changes. We say which source, every time.</p>
         </article>
         <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div>
           <h3>Plain words</h3>
           <p>A screen says what a thing is and where it came from. We describe what our work does today, not what we hope it will do next year. This page keeps that rule too.</p>
         </article>
         <article class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
           <h3>Yours stays yours</h3>
           <p>No accounts, no analytics, no advertising and no third-party code in anything we ship. Nothing you enter leaves your device unless you send it yourself.</p>
         </article>
@@ -65,10 +84,12 @@
 
   <section class="section" id="work">
     <div class="wrap">
-      <h2>Our work</h2>
-      <p class="intro">One line today.</p>
+      <div class="section-head">
+        <h2>Our work</h2>
+        <p>One line today.</p>
+      </div>
       <article class="product">
-        <div class="mark" aria-hidden="true">LL</div>
+        <img src="labs/paygrade-icon-512.png" width="128" height="128" alt="The PayGrade app icon: a columned building with a dollar sign inside a blue arc.">
         <div>
           <span class="tag">Software</span>
           <h3>Lucian Labs</h3>
@@ -85,9 +106,16 @@
 
   <section class="section alt" id="contact">
     <div class="wrap">
-      <h2>About Lucian Dynamics</h2>
-      <p class="intro">Lucian Dynamics is the parent name of Lucian Labs LLC, an independent company registered in California, United States. It is a small company: the person who answers your email is the person who built the software.</p>
+      <div class="section-head">
+        <h2>About Lucian Dynamics</h2>
+        <p>Lucian Dynamics is the parent name of Lucian Labs LLC, an independent company registered in California, United States. It is a small company: the person who answers your email is the person who built the software.</p>
+      </div>
       <p>Email <a href="mailto:paygradesupport@icloud.com">paygradesupport@icloud.com</a> for anything about the company or its work. Questions about PayGrade are answered on the <a href="labs/support.html">Lucian Labs support page</a>, and the <a href="labs/privacy.html">privacy policy</a> says exactly what our software keeps, fetches and sends, which is nothing about you.</p>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>California, United States</dd></div>
+        <div><dt>Company</dt><dd>Lucian Labs LLC, independent</dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:paygradesupport@icloud.com">paygradesupport@icloud.com</a></dd></div>
+      </dl>
     </div>
   </section>
 
@@ -95,13 +123,34 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>© 2026 Lucian Labs LLC</p>
-    <nav aria-label="Footer">
-      <a href="labs/">Lucian Labs</a>
-      <a href="labs/paygrade.html">PayGrade</a>
-      <a href="labs/support.html">Support</a>
-      <a href="labs/privacy.html">Privacy</a>
-    </nav>
+    <div class="cols">
+      <div>
+        <a class="wordmark" href="./">
+          <img class="mark" src="labs/paygrade-icon-512.png" width="34" height="34" alt="">
+          Lucian Dynamics
+        </a>
+        <p>One name over everything we make. Small, independent, and built one thing at a time in California.</p>
+        <p>© 2026 Lucian Labs LLC</p>
+      </div>
+      <div>
+        <h4>Lucian Dynamics</h4>
+        <nav aria-label="Lucian Dynamics">
+          <a href="./">Home</a>
+          <a href="#how">How we work</a>
+          <a href="#work">Our work</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h4>Lucian Labs</h4>
+        <nav aria-label="Lucian Labs">
+          <a href="labs/">Lucian Labs</a>
+          <a href="labs/paygrade.html">PayGrade</a>
+          <a href="labs/support.html">Support</a>
+          <a href="labs/privacy.html">Privacy</a>
+        </nav>
+      </div>
+    </div>
     <p class="legal">Lucian Dynamics is a brand of Lucian Labs LLC. Apple, iPhone, iPad and App Store are trademarks of Apple Inc.</p>
   </div>
 </footer>
