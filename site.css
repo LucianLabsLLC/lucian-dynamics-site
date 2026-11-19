@@ -82,94 +82,74 @@ li + li { margin-top: .4em; }
 }
 .skip:focus { left: 16px; }
 
-/* ---------- Header: one floating glass bar on every page ----------
-   The bar sits over the top of the brand band (the band is pulled up under
-   it by --header-h), so it reads as a thing of its own: dark glass with a
-   faint gradient edge, the company name with "Dynamics" in the brand
-   gradient, a "/ Lucian Labs" crumb on the Labs pages, quiet links with a
-   gradient underline for the current page, and the Get PayGrade button at
-   the end. Two rows on a phone (name and button, then the links scrolling
-   sideways); one sticky row from 760px. */
-:root { --header-h: 82px; }
-/* On a phone the header stays in the flow on the band's colour, two rows
-   tall; from 760px it is one row of a known height, floats over the band
-   and sticks to the top. */
-.site-header { position: relative; z-index: 10; color: var(--band-ink); background: var(--band); padding-bottom: 8px; }
-@media (min-width: 760px) { .site-header { position: sticky; top: 0; height: var(--header-h); background: transparent; padding-bottom: 0; } }
-.site-header .wrap { padding-top: 12px; }
+/* ---------- Header: one quiet bar on every page ----------
+   No box. The company name in two weights, the "/ Lucian Labs" crumb on the
+   Labs pages, the same five links everywhere in white with a teal underline
+   for the current page, and one white pill button as the only accent. On a
+   phone it is two rows on the band's colour (name and button, then the
+   links scrolling sideways); from 760px one row of --header-h that floats
+   over the top of the band and sticks to the top, with a blur behind it so
+   it stays readable over the light sections it passes. */
+:root { --header-h: 76px; }
+.site-header {
+  position: relative; z-index: 10; color: var(--band-ink);
+  background: var(--band); border-bottom: 1px solid rgba(255, 255, 255, .08); padding-bottom: 6px;
+}
+@media (min-width: 760px) {
+  .site-header {
+    position: sticky; top: 0; height: var(--header-h); padding-bottom: 0; border-bottom-color: rgba(255, 255, 255, .06);
+    background: color-mix(in srgb, var(--band) 72%, transparent);
+    -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+  }
+}
 .site-header .wrap {
   display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "brand cta" "nav nav";
-  align-items: center; column-gap: .75rem; row-gap: .35rem;
+  align-items: center; column-gap: .75rem; row-gap: .2rem; padding-top: 12px;
 }
 @media (min-width: 760px) {
-  .site-header .wrap { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "brand nav cta"; column-gap: 1.25rem; }
+  .site-header .wrap {
+    grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "brand nav cta";
+    column-gap: 2rem; height: var(--header-h); padding-top: 0;
+  }
 }
-/* The glass itself is drawn on the grid container through a pseudo-element
-   so the children can keep their grid areas. */
-.site-header .wrap::before {
-  content: ""; position: absolute; left: max(10px, env(safe-area-inset-left, 0px)); right: max(10px, env(safe-area-inset-right, 0px));
-  top: 10px; bottom: 0; border-radius: 20px; z-index: -1;
-  background:
-    linear-gradient(rgba(10, 17, 40, .78), rgba(10, 17, 40, .78)) padding-box,
-    linear-gradient(100deg, rgba(127, 176, 255, .55), rgba(63, 216, 234, .35) 50%, rgba(255, 255, 255, .12)) border-box;
-  border: 1px solid transparent;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .06);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
-}
-@media (min-width: 760px) {
-  .site-header .wrap::before { left: 0; right: 0; bottom: 8px; }
-  .site-header .wrap { position: relative; padding-left: 0; padding-right: 0; }
-}
-.site-header .wrap { position: relative; }
-.brand { grid-area: brand; display: flex; align-items: baseline; gap: .55em; min-width: 0; white-space: nowrap; padding-left: 1.1rem; }
-.wordmark {
-  color: var(--band-ink); text-decoration: none; font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em;
-}
-.wordmark b {
-  font-weight: 800;
-  background: linear-gradient(90deg, #8fbaff, #3fd8ea); -webkit-background-clip: text; background-clip: text; color: transparent;
-}
-.wordmark:hover b { background: linear-gradient(90deg, #ffffff, #3fd8ea); -webkit-background-clip: text; background-clip: text; }
+.brand { grid-area: brand; display: flex; align-items: baseline; gap: .55em; min-width: 0; white-space: nowrap; }
+.wordmark { color: var(--band-ink); text-decoration: none; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; }
+.wordmark b { font-weight: 400; }
+.wordmark:hover { color: #ffffff; }
 .wordmark small { font-weight: 500; font-size: .72rem; color: var(--band-muted); letter-spacing: .08em; text-transform: uppercase; margin-left: .3em; }
-.brand .crumb { color: rgba(255, 255, 255, .22); font-weight: 300; }
-.brand .place { color: var(--band-muted); font-weight: 500; font-size: 1rem; letter-spacing: -0.005em; overflow: hidden; text-overflow: ellipsis; }
-/* On a narrow phone the crumb has no room beside the button; the nav row
-   names the section anyway. */
+.brand .crumb { color: rgba(255, 255, 255, .25); font-weight: 300; }
+.brand .place { color: var(--band-muted); font-weight: 400; font-size: 1.05rem; overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 599px) { .brand .crumb, .brand .place { display: none; } }
 .site-nav {
-  grid-area: nav; display: flex; flex-wrap: nowrap; gap: .1rem; overflow-x: auto; -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; padding: 0 1.1rem .4rem;
-  -webkit-mask-image: linear-gradient(to right, #000 88%, transparent);
-  mask-image: linear-gradient(to right, #000 88%, transparent);
+  grid-area: nav; display: flex; flex-wrap: nowrap; gap: .2rem; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; margin: 0 -16px; padding: .2rem 16px .5rem;
+  -webkit-mask-image: linear-gradient(to right, #000 90%, transparent);
+  mask-image: linear-gradient(to right, #000 90%, transparent);
 }
 .site-nav::-webkit-scrollbar { display: none; }
 @media (min-width: 760px) {
-  .site-nav { justify-self: end; padding: 0; overflow: visible; -webkit-mask-image: none; mask-image: none; gap: .25rem; }
+  .site-nav { justify-self: end; margin: 0; padding: 0; gap: .35rem; overflow: visible; -webkit-mask-image: none; mask-image: none; }
 }
 .site-nav a {
-  position: relative; flex: none; color: var(--band-muted); text-decoration: none; font-weight: 500; font-size: .95rem;
-  padding: .45em .7em; border-radius: 10px; transition: color .15s ease;
+  position: relative; flex: none; color: rgba(255, 255, 255, .74); text-decoration: none; font-weight: 500; font-size: .95rem;
+  padding: .45em .65em; transition: color .15s ease;
 }
 .site-nav a::after {
-  content: ""; position: absolute; left: .7em; right: .7em; bottom: .2em; height: 2px; border-radius: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2)); opacity: 0; transform: scaleX(.4); transform-origin: left;
-  transition: opacity .15s ease, transform .2s ease;
+  content: ""; position: absolute; left: .65em; right: .65em; bottom: .15em; height: 2px; border-radius: 2px;
+  background: var(--accent-2); opacity: 0; transition: opacity .15s ease;
 }
-.site-nav a:hover { color: var(--band-ink); }
-.site-nav a:hover::after { opacity: .7; transform: scaleX(1); }
-.site-nav a[aria-current="page"] { color: var(--band-ink); }
-.site-nav a[aria-current="page"]::after { opacity: 1; transform: scaleX(1); }
+.site-nav a:hover { color: #ffffff; }
+.site-nav a[aria-current="page"] { color: #ffffff; }
+.site-nav a[aria-current="page"]::after { opacity: 1; }
 .cta-link {
-  grid-area: cta; justify-self: end; margin-right: .6rem;
-  display: inline-flex; align-items: center; padding: .5em 1em; border-radius: 999px; white-space: nowrap;
-  font-weight: 700; font-size: .9rem; text-decoration: none; color: #061030;
-  background: linear-gradient(135deg, #8fbaff, #3fd8ea); box-shadow: 0 6px 18px rgba(63, 216, 234, .25);
+  grid-area: cta; justify-self: end;
+  display: inline-flex; align-items: center; padding: .5em 1.05em; border-radius: 999px; white-space: nowrap;
+  font-weight: 600; font-size: .92rem; text-decoration: none; color: #0b1f5c; background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25); transition: background .15s ease, transform .15s ease;
 }
-.cta-link:hover { filter: brightness(1.08); }
-@media (prefers-color-scheme: dark) { .site-header .wrap::before { background: linear-gradient(rgba(6, 10, 26, .82), rgba(6, 10, 26, .82)) padding-box, linear-gradient(100deg, rgba(127, 176, 255, .55), rgba(63, 216, 234, .35) 50%, rgba(255, 255, 255, .12)) border-box; } }
+.cta-link:hover { background: #e6fbfd; transform: translateY(-1px); }
 /* From 760px the band under the bar is pulled up by the header's height and
-   padded by the same amount, so the glass floats on the glow. */
+   padded by the same amount, so the bar floats on the glow. */
 @media (min-width: 760px) {
   .site-header + main > .band:first-child,
   .site-header + .band { margin-top: calc(-1 * var(--header-h)); padding-top: calc(var(--header-h) + 1.5rem); }
