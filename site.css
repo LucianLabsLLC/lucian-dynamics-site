@@ -90,28 +90,43 @@ li + li { margin-top: .4em; }
 /* Sticky only where it fits on one line; on a phone it wraps to three rows
    and would eat a third of the screen. */
 @media (min-width: 760px) { .site-header { position: sticky; top: 0; z-index: 10; } }
+/* The same header on every page: the company name, then on the Lucian Labs
+   pages a crumb naming the section, and one nav with the same five links.
+   On a phone it is two rows, the nav scrolling sideways instead of wrapping. */
 .site-header .wrap {
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
-  gap: .5rem 1.5rem; min-height: 68px; padding-top: 10px; padding-bottom: 10px;
+  display: flex; flex-direction: column; align-items: stretch; gap: .25rem;
+  padding-top: 12px; padding-bottom: 10px;
 }
+@media (min-width: 760px) {
+  .site-header .wrap { flex-direction: row; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 68px; }
+}
+.brand { display: flex; align-items: baseline; gap: .55em; min-width: 0; white-space: nowrap; }
 .wordmark {
-  display: inline-flex; align-items: center; gap: .65em;
   color: var(--band-ink); text-decoration: none; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em;
 }
-.wordmark .mark { width: 34px; height: 34px; flex: none; border-radius: 9px; box-shadow: 0 2px 8px rgba(0, 0, 0, .35); }
-.wordmark small { font-weight: 500; font-size: .72rem; color: var(--band-muted); letter-spacing: .08em; text-transform: uppercase; margin-left: .1em; }
-.site-nav { display: flex; flex-wrap: wrap; gap: .25rem .4rem; }
+.wordmark:hover { color: var(--accent-2); }
+.wordmark small { font-weight: 500; font-size: .72rem; color: var(--band-muted); letter-spacing: .08em; text-transform: uppercase; margin-left: .3em; }
+.brand .crumb { color: var(--band-line); font-weight: 300; }
+.brand .section { color: var(--band-muted); font-weight: 500; font-size: 1.02rem; letter-spacing: -0.005em; }
+.site-nav {
+  display: flex; flex-wrap: nowrap; gap: .15rem; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; margin-left: -.8em; padding: .15rem .8em .15rem .8em;
+}
+.site-nav::-webkit-scrollbar { display: none; }
+/* A fade at the right edge says there is more to scroll to on a phone. */
+.site-nav {
+  -webkit-mask-image: linear-gradient(to right, #000 88%, transparent);
+  mask-image: linear-gradient(to right, #000 88%, transparent);
+}
+@media (min-width: 760px) {
+  .site-nav { margin-left: 0; padding: 0; overflow: visible; -webkit-mask-image: none; mask-image: none; }
+}
 .site-nav a {
-  color: var(--band-ink); text-decoration: none; font-weight: 500; font-size: .98rem;
-  padding: .4em .8em; border-radius: 999px;
+  flex: none; color: var(--band-ink); text-decoration: none; font-weight: 500; font-size: .98rem;
+  padding: .4em .85em; border-radius: 999px;
 }
 .site-nav a:hover { background: rgba(255, 255, 255, .08); }
 .site-nav a[aria-current="page"] { background: rgba(255, 255, 255, .12); }
-/* The way back up from the Lucian Labs pages to the Lucian Dynamics page:
-   first in the nav, muted, with an arrow so it reads as "up", not a page. */
-.site-nav a.up { color: var(--band-muted); }
-.site-nav a.up::before { content: "\2190\00a0"; }
-.site-nav a.up:hover { color: var(--band-ink); }
 
 /* ---------- The brand band: hero and page headers ---------- */
 .band {
