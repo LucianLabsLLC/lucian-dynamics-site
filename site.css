@@ -114,8 +114,11 @@ li + li { margin-top: .4em; }
 }
 .brand { grid-area: brand; display: flex; align-items: baseline; gap: .55em; min-width: 0; white-space: nowrap; }
 .wordmark { color: var(--band-ink); text-decoration: none; font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; }
-.wordmark b { font-weight: 400; }
-.wordmark:hover { color: #ffffff; }
+.wordmark b {
+  font-weight: 800;
+  background: linear-gradient(90deg, #8fbaff, #3fd8ea); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.wordmark:hover b { background: linear-gradient(90deg, #ffffff, #3fd8ea); -webkit-background-clip: text; background-clip: text; }
 .wordmark small { font-weight: 500; font-size: .72rem; color: var(--band-muted); letter-spacing: .08em; text-transform: uppercase; margin-left: .3em; }
 .brand .crumb { color: rgba(255, 255, 255, .25); font-weight: 300; }
 .brand .place { color: var(--band-muted); font-weight: 400; font-size: 1.05rem; overflow: hidden; text-overflow: ellipsis; }
@@ -144,10 +147,10 @@ li + li { margin-top: .4em; }
 .cta-link {
   grid-area: cta; justify-self: end;
   display: inline-flex; align-items: center; padding: .5em 1.05em; border-radius: 999px; white-space: nowrap;
-  font-weight: 600; font-size: .92rem; text-decoration: none; color: #0b1f5c; background: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, .25); transition: background .15s ease, transform .15s ease;
+  font-weight: 700; font-size: .9rem; text-decoration: none; color: #061030;
+  background: linear-gradient(135deg, #8fbaff, #3fd8ea); box-shadow: 0 6px 18px rgba(63, 216, 234, .25);
 }
-.cta-link:hover { background: #e6fbfd; transform: translateY(-1px); }
+.cta-link:hover { filter: brightness(1.08); }
 /* From 760px the band under the bar is pulled up by the header's height and
    padded by the same amount, so the bar floats on the glow. */
 @media (min-width: 760px) {
