@@ -365,17 +365,23 @@ li + li { margin-top: .4em; }
 .toc a { text-decoration: none; }
 .toc a:hover { text-decoration: underline; }
 
-/* ---------- Footer ---------- */
-.site-footer { background: var(--band); color: var(--band-muted); padding: 3rem 0 2.5rem; font-size: .95rem; border-top: 1px solid var(--band-line); }
-.site-footer .cols { display: grid; gap: 2rem; }
-@media (min-width: 760px) { .site-footer .cols { grid-template-columns: 1.4fr 1fr 1fr; } }
-.site-footer h4 { color: var(--band-ink); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 .8rem; }
-.site-footer nav { display: grid; gap: .4rem; }
-.site-footer a { color: var(--band-muted); text-decoration: none; }
-.site-footer a:hover { color: var(--band-ink); text-decoration: underline; }
-.site-footer .wordmark { margin-bottom: .8rem; }
-.site-footer p { margin: 0 0 .6rem; max-width: 34em; }
-.site-footer .legal { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--band-line); font-size: .85rem; }
+/* ---------- Footer: the header again, with the small print beneath ---------- */
+.site-footer { background: var(--band); color: var(--band-muted); border-top: 1px solid rgba(255, 255, 255, .08); padding: 1.75rem 0 2.25rem; font-size: .95rem; }
+.foot-bar {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "brand cta" "nav nav";
+  align-items: center; column-gap: .75rem; row-gap: .2rem;
+}
+@media (min-width: 760px) {
+  .foot-bar { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "brand nav cta"; column-gap: 2rem; }
+}
+.foot-meta {
+  margin-top: 1.25rem; padding-top: 1.1rem; border-top: 1px solid rgba(255, 255, 255, .06);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 2rem; font-size: .88rem;
+}
+.foot-meta p { margin: 0; max-width: 36em; }
+.foot-meta .legal { color: rgba(255, 255, 255, .45); }
+.foot-meta a { color: var(--band-muted); }
+.foot-meta a:hover { color: var(--band-ink); }
 
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
